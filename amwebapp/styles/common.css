@@ -48,14 +48,15 @@ header h2 {
 
 nav {
     align-self: center;
-    font-size: max(16px, 1vw);
     margin: 0;
     width: 60vw;
     min-width: 900px;
+    min-height: 5vh;
     padding: 1vh 1vw;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
     border-radius: 35px;
     background-color: var(--accent1);
     position: fixed;
@@ -67,6 +68,7 @@ nav a {
     padding: 2vh 2vw;
     border-radius: 35px;
     color: var(--accent4);
+    font-size: max(16px, 1.5vh);
 }
 
 .current-nav {
@@ -84,12 +86,6 @@ main {
     text-align: center;
     background-color: var(--accent4);
     font-size: 2.5vh;
-}
-
-main div {
-    width: 50vw;
-    min-width: calc(900px + 2vw);
-    padding: 2vh 5vw;
 }
 
 main div ul {
@@ -113,7 +109,6 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    font-size: max(1vw, 16px);
     background-color: var(--marginalbg);
     color: var(--text);
 }
@@ -122,11 +117,14 @@ footer p {
     width: 90vw;
     text-align: center;
     display: flex;
-    justify-content: space-around;
+    flex-wrap: wrap;
+    font-size: max(16px, 1.5vh);
+    justify-content: space-evenly;
 }
 
 footer a {
     color: var(--text);
+    padding: 1vh 0;
 }
 
 .accent {
@@ -240,3 +238,17 @@ a {
 }
 
 /* min width for desktop mode = 1015px */
+
+@media screen and (orientation: portrait) {
+    main div {
+        width: 90vw;
+        padding: 2vh 5vw;
+    }
+}
+
+@media screen and (orientation: landscape) {
+    main div {
+        width: 50vw;
+        padding: 2vh 5vw;
+    }
+}
