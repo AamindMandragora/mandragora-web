@@ -1,67 +1,93 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Maybe New Website</title>
-        <link rel="stylesheet" href="styles/common.css">
+        <%- include('../partials/head'); %>
     </head>
     <body>
-        <header id="home">
-            <nav>
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#education">Education</a>
-                <a href="#experience">Experience</a>
-                <a href="#knowledge">Knowledge</a>
-                <a href="#projects">Projects</a>
-                <a href="#contact-info">Contact Info</a>
-            </nav>
-            <div id="title">
-                <h1>Aamind Mandragora</h1>
-                <h2>Programmer x <a class="accent">mathematician</a></h2>
-            </div>
+        <header id="home" class="panel">
+            <%- include('../partials/header'); %>
         </header>
+        <nav>
+            <a class="nav" href="#home">Home</a>
+            <a class="nav" href="#about">About</a>
+            <a class="nav" href="#education">Education</a>
+            <a class="nav" href="#experience">Experience</a>
+            <a class="nav" href="#knowledge">Knowledge</a>
+            <a class="nav" href="#projects">Projects</a>
+            <a class="nav" href="#contact-info">Contact Info</a>
+        </nav>
         <main>
-            <div id="about">
+            <div id="about" class="light panel">
                 <h1>About Me</h1>
                 <p>
-                    I'm a rising senior at the <a href="https://imsa.edu" target="_blank">Illinois Mathematics and Science Academy in Aurora, Illinois</a>, and plan to major in Computer Science and Math.
+                    I’m a rising senior at the Illinois Mathematics and Science Academy in Aurora, Illinois, and plan to dual major in Computer Science and Math. I’ve loved computer science ever since I was 11, making games on Scratch. Since then, I’ve been taking my education into my own hands, completing the Computer programming and Pixar in a Box courses on Khan Academy during middle school. I’ve loved math for even longer, being placed in classes equal to those being taken by students several grades above my own. To learn more, I applied to IMSA and got in. Since then, I’ve been satiating my hunger for knowledge by taking difficult classes, doing Math and Computer Science extracurriculars, and building projects to make my daily life easier.
+                    <br><br>
+                    Despite spending so much time on it, I do enjoy things outside of my intended majors. I’m the captain of my school’s Quiz Bowl team and a member of the IMSA Society of Musical Performers. I also direct and film movies for IMSA’s annual Clash of the Halls competition, and consistently place in the top two. In my free time, I enjoy playing Ultimate Frisbee, Super Smash Brothers, Table Tennis, and Magic the Gathering.
                 </p>
             </div>
-            <div id="education">
+            <div id="education" class="dark panel">
                 <h1>Education</h1>
                 <p>
-                    I got accepted to IMSA near the end of my eighth grade, and as IMSA is a three year school, I jumped directly to my sophmore year.
+                    I got accepted to IMSA in the spring of my eighth grade, and, as IMSA is a three year school, I skipped my freshman year and joined IMSA as a sophomore that fall. While there, I took several difficult computer science and math classes, such as Computational Science, Computer Science Seminar: Linux and Cybersecurity, Number Theory, Abstract Algebra, Multivariable Calculus, Differential Equations, and Linear Algebra.
                 </p>
             </div>
-            <div id="experience">
+            <div id="experience" class="light panel">
                 <h1>Experience</h1>
-                <p>
-                    During the summer after my junior year, I was hired as a summer intern for the Business Technology Solutions branch of AbbVie. There, I used Streamlit and PostgreSQL.
-                </p>
-            </div>
-            <div id="knowledge">
-                <h1>Knowledge</h1>
                 <ul>
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>JavaScript</li>
-                <li>Node.js</li>
-                <li>Express.js</li>
-                <li>EJS</li>
-                <li>Python</li>
-                <li>Selenium</li>
-                <li>Beautiful Soup</li>
-                <li>NumPy</li>
-                <li>Matplotlib</li>
-                <li>Pytorch</li>
+                    <li>
+                        <h2>Student Inquiry and Research</h2>
+                        <h3>September 2023 - April 2024</h3>
+                        <p>
+                            I worked with Dr. Ashwin Mohan, a member of the IMSA Computer Science faculty, to develop a diffusion model that could copy the font from an input character and transfer it to other characters.
+                        </p>
+                    </li>
+                    <li>
+                        <h2>IMSAlympians Computer Science Facilitator</h2>
+                        <h3>August 2023 - Present</h3>
+                        <p>
+                            As the Computer Science Facilitator for IMSAlympians, I ran study sessions to teach competitive programming skills to IMSA students in preparation for the United States of America Computing Olympiad.
+                        </p>
+                    </li>
+                    <li>
+                        <h2>IMSA Peer Tutor</h2>
+                        <h3>August 2023 - Present</h3>
+                        <p>
+                            I tutored IMSA students after school for at least three hours a week in various subjects, including Precalculus, Calculus, Computer Science, Chemistry, Physics, and French. Within Computer Science, I mainly tutored HTML, CSS, Python, and Java.
+                        </p>
+                    </li>
+                    <li>
+                        <h2>AbbVie Summer Intern</h2>
+                        <h3>June 2024 - August 2024</h3>
+                        <p>
+                            I worked as a summer intern for the Business Technology Solutions branch of AbbVie. There, I learned several Python libraries, including Streamlit and PostgreSQL, while working on the admin page for a LLM they had been training.
+                        </p>
+                    </li>
                 </ul>
             </div>
-            <div id="projects">
+            <div id="knowledge"class="dark panel">
+                <h1>Knowledge</h1>
+                <p>
+                    Web Development is definitely the sector of Computer Science I have the most experience in, and I’ve worked with <b>HTML</b>, <b>CSS</b>, <b>JavaScript</b>, <b>Node.js</b>, <b>Express.js</b>, <b>RESTful APIs</b>, and <b>MongoDB</b>. I’ve also done some work in Machine Learning, and know <b>Python</b>, <b>NumPy</b>, and <b>PyTorch</b>. I also used <b>Streamlit</b> and <b>PostgreSQL</b> during my time as an AbbVie Summer Intern. For various other classes and projects, I’ve used <b>Selenium</b>, <b>Java</b>, and <b>C#</b>.
+                </p>
+            </div>
+            <div id="projects" class="light panel">
                 <h1>Projects</h1>
+                <ul>
+                    <a href="https://github.com/AamindMandragora/YT-Music-Spotify-Lyrics-Fetcher" target="_blank">
+                        <li>
+                            <h2>YT Music/Spotify Lyrics Fetcher</h2>
+                            <p>Uses the Genius API to look up the song that is currently playing on Youtube Music or Spotify and fetch its lyrics. Those lyrics are then displayed in the Chrome Side Panel alongside Previous/Next Song and Pause/Play Buttons.</p>
+                        </li>
+                    </a>
+                </ul>
             </div>
         </main>
-        <footer id="contact-info">
-            <p>Contact me at:</p>
+        <button id="settingsbtn">
+            <img src="images/settings.png" width="40px" height="40px">
+        </button>
+        <%- include('../templates/popup', title="Settings", elements=[["button", "accent", "Change Theme"]]); %>
+        <footer id="contact-info" class="panel">
+            <%- include('../partials/footer'); %>
         </footer>
     </body>
 </html>
