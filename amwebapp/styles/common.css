@@ -49,8 +49,7 @@ header h2 {
 nav {
     align-self: center;
     margin: 0;
-    width: 60vw;
-    min-width: 900px;
+    max-width: 60vw;
     min-height: 5vh;
     padding: 1vh 1vw;
     display: flex;
@@ -127,11 +126,20 @@ footer a {
     padding: 1vh 0;
 }
 
-.accent {
-    color: var(--accent1);
+button {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-.accent:hover {
+button.accent {
+    color: var(--accent1);
+    border: none;
+    background-color: transparent;
+    font-size: inherit;
+    font-weight: inherit;
+    padding-left: 0;
+}
+
+button.accent:hover {
     color: var(--accent2);
 }
 
@@ -156,6 +164,11 @@ footer a {
 
 a {
     text-decoration: none;
+    color: var(--accent1);
+}
+
+a:hover {
+    color: var(--accent2);
 }
 
 .light {
@@ -180,7 +193,7 @@ a {
     background-color: var(--accent1);
 }
 
-#settings {
+.popup {
     display: none;
     flex-direction: column;
     align-items: center;
@@ -190,12 +203,13 @@ a {
     transform: translate(-50%, -50%);
     text-align: center;
     background-color: var(--text);
-    width: 30vw;
-    height: 80vh;
+    width: max(30vw, 30vh);
+    height: min(80vh, 150vw);
     background-color: var(--accent4);
+    font-size: max(1vw, 1.5vh);
 }
 
-#shade {
+.shade {
     background-color: #363636ce;
     position: fixed;
     top: 0;
@@ -205,36 +219,41 @@ a {
     display: none;
 }
 
-#settings h1 {
+.popup h1 {
     margin: 0;
-    padding: 5vh 0;
-    width: 30vw;
+    padding: 3vh 0;
+    width: max(30vw, 30vh);
     background-color: var(--marginalbg);
     color: var(--text);
 }
 
-#settings #accent {
+#settings-popup #accent {
     background-color: var(--accent1);
     color: var(--text);
-    height: 30px;
     border: none;
     margin-top: 2vh;
+    padding: 1vh 1vw;
+    font-size: max(0.8vw, 1.1vh);
 }
 
-#exit {
+.exit {
     position: fixed;
-    top: 5vh;
-    left: 25vw;
-    border-radius: 100%;
-    border: 2px solid var(--text);
-    width: 40px;
-    height: 40px;
+    top: 5px;
+    right: 5px;
+    border: 0;
+    width: max(2.5vw, 2.5vh);
+    height: max(2.5vw, 2.5vh);
     background-color: var(--accent1);
     color: var(--text);
+    font-size: max(0.8vw, 1.1vh);
 }
 
-#exit:hover {
+.exit:hover {
     background-color: var(--accent2);
+}
+
+.data {
+    padding: 1vh 2vw;
 }
 
 /* min width for desktop mode = 1015px */

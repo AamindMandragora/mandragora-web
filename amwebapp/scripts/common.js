@@ -3,8 +3,6 @@ let themes = [
     [[0, 0, 0], [255, 255, 255], [2, 77, 75]],
     [[0, 0, 0], [255, 255, 255], [135, 0, 47]],
     [[0, 0, 0], [255, 255, 255], [21, 77, 0]],
-    [[0, 0, 0], [255, 255, 255], [39, 0, 74]],
-    [[0, 0, 0], [255, 255, 255], [122, 104, 0]],
     [[0, 33, 23], [255, 255, 255], [135, 0, 47]],
     [[0, 0, 0], [255, 255, 255], [55, 55, 55]]
 ];
@@ -106,15 +104,39 @@ window.onload = function(e) {
             }
         }
     })
+    var xes = document.getElementsByClassName("accent");
+    for (var x = 0; x < xes.length; x++) {
+        xes[x].addEventListener("click", function(e) {
+            if (currentpopup != '') {
+                document.getElementById(`${currentpopup}-popup`).style.display = "none";
+                document.getElementById(`${currentpopup}-shade`).style.display = "none";
+                currentpopup = '';
+            }
+            currentpopup = e.currentTarget.id;
+            document.getElementById(`${currentpopup}-popup`).style.display = "flex";
+            document.getElementById(`${currentpopup}-shade`).style.display = "flex";
+        })
+    }
+    var datas = document.getElementsByClassName("data");
+    for (var d = 0; d < datas.length; d++) {
+        var parseddata = "";
+        var data = datas[d].innerText.trim().split("||")
+        for (var e = 0; e < data.length - 1; e++) {
+            var splitdata = data[e].split("~");
+            parseddata += `<${splitdata[0]} id="${splitdata[1]}">${splitdata[2]}</${splitdata[0]}>`
+            console.log(parseddata)
+        }
+        datas[d].innerHTML = parseddata;
+    }
     document.getElementById("settingsbtn").addEventListener("click", function() {
         if (currentpopup == '') {
-            document.getElementById("settings").style.display = "flex";
             currentpopup = 'settings';
-            document.getElementById("shade").style.display = "flex";
-        } else if (currentpopup == 'settings') {
-            document.getElementById("settings").style.display = "none";
+            document.getElementById(`${currentpopup}-popup`).style.display = "flex";
+            document.getElementById(`${currentpopup}-shade`).style.display = "flex";
+        } else {
+            document.getElementById(`${currentpopup}-popup`).style.display = "none";
+            document.getElementById(`${currentpopup}-shade`).style.display = "none";
             currentpopup = '';
-            document.getElementById("shade").style.display = "none";
         }
     })
     document.getElementById("accent").addEventListener("click", function() {
@@ -130,9 +152,12 @@ window.onload = function(e) {
         document.body.style.setProperty("--accentb", themes[themeindex][2][2]);
         setCookie("theme", themeindex, 365);
     })
-    document.getElementById("exit").addEventListener("click", function() {
-        document.getElementById(currentpopup).style.display = "none";
-        currentpopup = '';
-        document.getElementById("shade").style.display = "none";
-    })
+    var exits = document.getElementsByClassName("exit");
+    for (var i = 0; i < exits.length; i++) {
+        exits[i].addEventListener("click", function() {
+            document.getElementById(`${currentpopup}-popup`).style.display = "none";
+            document.getElementById(`${currentpopup}-shade`).style.display = "none";
+            currentpopup = '';
+        })
+    }
 }
