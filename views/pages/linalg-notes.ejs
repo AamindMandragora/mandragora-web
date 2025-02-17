@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <%- include('../partials/head'); %>
+    </head>
+    <body>
+        <header id="home" class="panel">
+            <%- include('../partials/header'); %>
+        </header>
+        <main>
+            <div id="notes" class="light panel">
+                <h1>Preface</h1>
+                I'm releasing these notes section-by-section, and below are the PDFs for each part I've written. Once I've finished every section in a chapter, those PDFs will be compiled into one, and each chapter will be replaced with the whole PDF once they're all done.
+                <h1>Notes</h1>
+                <h2>Chapter 1</h2>
+                <a href="pdfs/linalg-notes/chapter-1.1.pdf" target="_blank" type="application/pdf" class="pdflink">Section 1</a>
+            </div>
+        </main>
+        <button id="settingsbtn">
+            <img src="images/settings.png" width="40px" height="40px">
+        </button>
+        <%- include('../templates/popup', title="Settings", elements=[["button", "accent", "Change Theme"]]); %>
+        <footer id="contact-info" class="panel">
+            <%- include('../partials/footer'); %>
+        </footer>
+    </body>
+</html>

@@ -256,6 +256,14 @@ a:hover {
     padding: 1vh 2vw;
 }
 
+.pdflink {
+    color: var(--accent4);
+}
+
+.pdflink:hover {
+    color: var(--text);
+}
+
 /* min width for desktop mode = 1015px */
 
 @media screen and (orientation: portrait) {
